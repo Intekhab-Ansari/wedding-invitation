@@ -411,6 +411,7 @@ class PetalsCanvas {
   resize() {
     this.width = this.canvas.width = window.innerWidth;
     this.height = this.canvas.height = window.innerHeight;
+    this.maxPetals = window.innerWidth > 1024 ? 45 : (window.innerWidth > 768 ? 32 : 24);
   }
 
   initPetals() {
