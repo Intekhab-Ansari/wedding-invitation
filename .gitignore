@@ -1,0 +1,15 @@
+# Temporary extraction artifacts
+assets/video_frames/
+assets/analysis_full/
+assets/analysis_start/
+assets/analysis_transition/
+assets/detailed_early/
+assets/video/
+AQMKontYvKorF-n4yKNnH-*.mp4
+extract_frames.py
+
+# System & Cache
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

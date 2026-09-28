@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Aditya &amp; Richa | Digital Wedding Invitation</title>
+  <meta name="description" content="A sacred beginning to a beautiful journey. Celebrate the wedding of Aditya and Richa along the sacred ghats of Varanasi and Munger Club.">
+  <meta name="keywords" content="Aditya and Richa Wedding, Varanasi Ghats, Munger Club, Mehndi, Matikor, Haldi, Sangeet, Shubh Vivah">
+  
+  <!-- Open Graph for WhatsApp & Instagram Sharing -->
+  <meta property="og:title" content="Aditya &amp; Richa - Wedding Invitation">
+  <meta property="og:description" content="Two souls, a thousand blessings, a lifetime together. Join us along the sacred ghats.">
+  <meta property="og:image" content="assets/images/riverside_bg.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- No Cache Meta Tags -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Preload high-priority cover & formal invite imagery to prevent flash of black -->
+  <link rel="preload" as="image" href="assets/images/varanasi_cover_sky.jpg">
+  <link rel="preload" as="image" href="assets/images/formal_pillar_frame.jpg">
+
+  <!-- Google Fonts matching the video -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Yatra+One&family=Rozha+One&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=3000">
+</head>
+<body>
+
+  <!-- Top Scroll Journey Progress Indicator with Blooming Lotus -->
+  <div id="scroll-progress-bar" class="scroll-progress-bar" aria-hidden="true">
+    <div class="scroll-progress-fill" id="scroll-progress-fill">
+      <span class="progress-lotus-glyph">🪷</span>
+    </div>
+  </div>
+
+  <!-- Background Music Audio Track (Direct from Video: Raanjhanaa / Tum Tak) -->
+  <audio id="wedding-audio" src="assets/audio/wedding_soundtrack.mp4" loop preload="auto"></audio>
+
+  <!-- Floating Audio & Petals Floating Controls -->
+  <aside class="floating-controls" aria-label="Audio and Effects Controls">
+    <button id="audio-toggle-btn" class="control-btn" title="Toggle Wedding Music" aria-label="Toggle Wedding Music">
+      <span class="icon" id="audio-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+        </svg>
+      </span>
+      <span class="music-wave" id="music-wave">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+    <button id="petals-toggle-btn" class="control-btn active" title="Toggle Auspicious Petals" aria-label="Toggle Flower Petals">
+      <span class="icon">🌸</span>
+    </button>
+  </aside>
+
+  <!-- Interactive Petals Canvas -->
+  <canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ethereal Light Bloom Overlay for Cinematic Page Dissolve -->
+  <!-- Ethereal Light Bloom Overlay for Cinematic Page Dissolve -->
+  <div id="ethereal-flash" class="ethereal-light-flash" aria-hidden="true"></div>
+
+  <!-- ============================================== -->
+  <!-- SCREEN 1: LANDING PAGE (COVER - EXACT VIDEO)    -->
+  <!-- ============================================== -->
+  <section id="splash-screen" class="splash-screen" aria-label="Wedding Invitation Cover">
+    <div class="cover-bg-image-layer" id="cover-bg-layer"></div>
+    <div class="cover-sky-gradient-overlay"></div>
+    <div class="cover-reveal-shimmer" aria-hidden="true"></div>
+
+    <!-- Temple Entry 3D Portal Gates Overlay (Plays when Tap to Enter is clicked) -->
+    <div class="temple-portal-overlay" id="temple-portal-overlay" aria-hidden="true">
+      <div class="temple-light-burst"></div>
+      <div class="portal-door portal-door-left">
+        <div class="door-emboss-pattern"></div>
+        <div class="door-handle"></div>
+      </div>
+      <div class="portal-door portal-door-right">
+        <div class="door-emboss-pattern"></div>
+        <div class="door-handle"></div>
+      </div>
+    </div>
+
+    <div class="cover-canvas-content" id="cover-canvas-content">
+      <!-- Top Row: Inscriptions in the sky -->
+      <header class="cover-top-bar">
+        <div class="cover-top-left">
+          <p class="cover-proclamation">
+            TWO SOULS<br>
+            A THOUSAND BLESSINGS<br>
+            A LIFETIME TOGETHER
+          </p>
+        </div>
+        <div class="cover-top-right">
+          <div class="cover-top-mahadev">HAR HAR MAHADEV</div>
+          <div class="cover-top-kashi">काशी सदा शिवनगरी</div>
+        </div>
+      </header>
+
+      <!-- Center Typography in Sky -->
+      <div class="cover-center-names-group">
+        <div class="cover-lotus-row">
+          <span class="line-wing"></span>
+          <span class="lotus-glyph">🪷</span>
+          <span class="line-wing"></span>
+        </div>
+
+        <h1 class="cover-couple-names">
+          <span class="c-name">ADITYA</span>
+          <span class="c-and">and</span>
+          <span class="c-name">RICHA</span>
+        </h1>
+
+        <div class="cover-sub-divider">
+          <span class="line-wing-sm"></span>
+          <span class="diamond-dot">◆</span>
+          <span class="line-wing-sm"></span>
+        </div>
+
+        <p class="cover-subtitle">
+          A SACRED BEGINNING<br>
+          TO A BEAUTIFUL JOURNEY
+        </p>
+      </div>
+
+      <!-- Bottom Arched Maroon Button over River Water -->
+      <div class="cover-bottom-bar">
+        <div class="cover-watermark">Kismet.studios</div>
+        
+        <!-- Main Scalloped Tap to Enter Button -->
+        <button id="enter-btn" class="cover-tap-btn" aria-label="Tap to enter the sacred wedding invitation">
+          <span class="btn-shockwave" aria-hidden="true"></span>
+          <span class="btn-top-flourish">
+            <svg viewBox="0 0 24 16" width="22" height="15" fill="#F4E298">
+              <path d="M12 0c-1.5 3-4.5 5.5-9 7 2.5 1 5.5 0.5 8-1.5 1 2 2 3 5 4.5-2-2-2-4-2-6 2-1 4-2.5 5-5-3 1-5 1.5-7 1z"/>
+            </svg>
+          </span>
+          <span class="btn-label"><span class="btn-star">✦</span> TAP TO ENTER <span class="btn-star">✦</span></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================== -->
+  <!-- MAIN INVITATION CONTENT                        -->
+  <!-- ============================================== -->
+  <main id="main-content" class="main-content">
+
+    <!-- ============================================== -->
+    <!-- SCREEN 2: SACRED TEMPLE SANCTUM (MULTI-SCROLL) -->
+    <!-- (User stays inside temple across 2-3 scrolls)  -->
+    <!-- ============================================== -->
+    <section id="formal-invite-stage" class="temple-journey-container" aria-label="Sacred Temple Formal Invitation">
+      <div class="temple-sticky-viewport" id="temple-sticky-viewport">
+        <div class="formal-card-frame" id="formal-card-frame">
+          <img src="assets/images/formal_pillar_frame.jpg" alt="Sacred Kashi Temple Arch Formal Invitation" class="formal-artwork-bg" id="formal-artwork-bg" loading="eager">
+          
+          <!-- Realistic Swinging Brass Temple Bells -->
+          <div class="interactive-temple-bells" id="interactive-temple-bells" aria-hidden="true">
+            <div class="temple-bell bell-left" id="bell-left">
+              <span class="bell-rope"></span>
+              <span class="bell-icon">🔔</span>
+            </div>
+            <div class="temple-bell bell-right" id="bell-right">
+              <span class="bell-rope"></span>
+              <span class="bell-icon">🔔</span>
+            </div>
+          </div>
+
+          <!-- Formal Invitation Content divided into Phase 1 (Names) and Phase 2 (Lineage) -->
+          <div class="formal-text-content" id="temple-formal-text">
+            
+            <!-- Phase 1: Invocation & Couple Names -->
+            <div class="temple-card-phase phase-invocation is-active" id="temple-phase-1">
+              <div class="top-invocation-group">
+                <div class="shri-ganesh-om">ॐ</div>
+                <h3 class="shri-kashi-mantra">श्री काशी विश्वनाथाय नमः</h3>
+                <p class="blessings-line">WITH THE BLESSINGS OF<br>MAA GANGA AND LORD VISHWANATH</p>
+                <div class="floral-ornament-row">
+                  <span class="f-ornament-line"></span><i>❖</i><span class="f-ornament-line"></span>
+                </div>
+              </div>
+
+              <p class="formal-preface">TOGETHER WITH OUR FAMILIES<br>WE INVITE YOU TO THE WEDDING OF</p>
+
+              <div class="couple-formal-names-wrap">
+                <h2 class="formal-bride">Richa</h2>
+                <div class="formal-weds-row">
+                  <span class="weds-line"></span>
+                  <span class="weds-script">weds</span>
+                  <span class="weds-line"></span>
+                  <span class="weds-symbol">❖</span>
+                </div>
+                <h2 class="formal-groom">Aditya</h2>
+              </div>
+            </div>
+
+            <!-- Phase 2: Families Lineage & Auspicious Hashtag -->
+            <div class="temple-card-phase phase-lineage" id="temple-phase-2">
+              <div class="phase-2-inner">
+                <div class="floral-ornament-row">
+                  <span class="f-ornament-line"></span><i>⚜</i><span class="f-ornament-line"></span>
+                </div>
+
+                <p class="families-side-quote">
+                  "Two families. Two hearts.<br>A beautiful beginning."
+                </p>
+
+                <div class="parents-lineage-grid">
+                  <div class="lineage-side">
+                    <span class="lineage-role">DAUGHTER OF</span>
+                    <span class="lineage-names">Mr. Manoj<br>&amp; Mrs. Anupama Verma</span>
+                  </div>
+                  <div class="lineage-side">
+                    <span class="lineage-role">SON OF</span>
+                    <span class="lineage-names">Mr. Rajesh<br>&amp; Mrs. Sunita Sharma</span>
+                  </div>
+                </div>
+
+                <div class="formal-hashtag-row">
+                  <span class="wedding-hashtag">#AdiKiRicha</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subtle Live Scroll Guidance inside Temple Sanctum -->
+          <div class="temple-scroll-cue" id="temple-scroll-cue" aria-live="polite">
+            <span class="cue-pill">
+              <span class="cue-pulse-gem">✦</span>
+              <span class="cue-text" id="cue-text">Scroll into Temple (1/3)</span>
+              <span class="cue-arrow">⌄</span>
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 3: SACRED GHATS & SHUBH MUHURAT COUNTDOWN -->
+    <!-- (Smoothly arrives on the 3rd scroll)          -->
+    <!-- ============================================== -->
+    <section id="ghats-countdown-section" class="section ghats-countdown-section reveal-on-scroll">
+      <!-- Couple Resting by the Ghats Sunset Artwork -->
+      <div class="ghats-couple-frame">
+        <img src="assets/images/couple_ghats_sunset.jpg" alt="Richa &amp; Aditya sitting peacefully by the sacred Ganges" class="ghats-couple-img" loading="lazy">
+        <div class="ghats-caption-ribbon">
+          <p>"Written along the sacred ghats of Varanasi"</p>
+        </div>
+      </div>
+
+      <!-- Auspicious Muhurat Countdown -->
+      <div class="countdown-parchment-card">
+        <span class="countdown-tag">SHUBH MUHURAT</span>
+        <h3 class="countdown-title">Counting Days to the Sacred Vows</h3>
+        <div class="countdown-grid" id="countdown-timer">
+          <div class="countdown-box">
+            <span class="count-num" id="days">00</span>
+            <span class="count-text">Days</span>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-box">
+            <span class="count-num" id="hours">00</span>
+            <span class="count-text">Hours</span>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-box">
+            <span class="count-num" id="minutes">00</span>
+            <span class="count-text">Mins</span>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-box">
+            <span class="count-num" id="seconds">00</span>
+            <span class="count-text">Secs</span>
+          </div>
+        </div>
+        <p class="countdown-date-sub">Saturday, 28th November 2026 • Saat Phere</p>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 3: OUR STORY ("THE JOURNEY...")         -->
+    <!-- (Exact Word-for-Word Copy & Visual from Reel)  -->
+    <!-- ============================================== -->
+    <section id="story" class="section story-section">
+      <div class="section-heading-wrap reveal-on-scroll">
+        <span class="sub-label">A JOURNEY OF DESTINIES</span>
+        <h2 class="main-title">The Journey...</h2>
+        <div class="simple-divider">❧ ⚜ ☙</div>
+      </div>
+
+      <!-- Painted Wooden Signboard: यहीं कहीं प्यार है -->
+      <div class="signboard-wrapper reveal-on-scroll">
+        <div class="signboard-chains" aria-hidden="true">
+          <span class="chain-link chain-l"></span>
+          <span class="chain-link chain-r"></span>
+        </div>
+        <div class="wooden-painted-sign">
+          <div class="sign-top-dots">•••</div>
+          <span class="sign-hindi-text">यहीं कहीं प्यार है</span>
+          <span class="sign-heart">♥</span>
+          <span class="sign-english-sub">Love is right here</span>
+        </div>
+      </div>
+
+      <!-- Narrative Parchment Card (Exact Story from Video) -->
+      <div class="story-parchment-card reveal-on-scroll">
+        <div class="parchment-inner">
+          <p class="story-stanza">
+            "Nothing dramatic happened.<br>
+            No love-at-first-sight.<br>
+            No movie-style moment."
+          </p>
+
+          <p class="story-stanza highlight-stanza">
+            "Just two people slowly discovering<br>
+            that they enjoyed talking to each other."
+          </p>
+
+          <p class="story-stanza">
+            "Meetings became phone calls.<br>
+            Phone calls became late-night conversations."
+          </p>
+
+          <p class="story-stanza">
+            "And somewhere along the way,<br>
+            they stopped being two strangers<br>
+            and started choosing each other."
+          </p>
+
+          <p class="story-arranged-line">
+            "Their parents may have arranged their meeting,<br>
+            but they wrote the love story themselves."
+          </p>
+
+          <div class="story-ornament-line">
+            <span></span><i>❖</i><span></span>
+          </div>
+
+          <p class="story-families-calligraphy">
+            "Some love stories begin with a meeting.<br>
+            Theirs began with two families."
+          </p>
+
+          <div class="story-ornament-line">
+            <span></span><i>❖</i><span></span>
+          </div>
+
+          <div class="story-couple-sign">
+            <span class="sign-bold-names">ADITYA &nbsp;♥&nbsp; RICHA</span>
+            <span class="sign-hashtag">#AdiKiRicha</span>
+          </div>
+
+          <div class="story-footer-badge">
+            <span class="badge-pill">DIFFERENT RITUALS, SAME JOY</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Couple Royal Portrait Frame -->
+      <div class="couple-portrait-wrap reveal-on-scroll">
+        <div class="portrait-card">
+          <img src="assets/images/couple_portrait.jpg" alt="Aditya &amp; Richa in Royal Attire" class="portrait-img" loading="lazy">
+          <div class="portrait-caption">
+            <h3 class="portrait-title">Aditya &amp; Richa</h3>
+            <p class="portrait-quote">"Two souls, a thousand blessings, a lifetime together."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 4: THE CELEBRATIONS (2x2 GRID COLLAGE)  -->
+    <!-- (Exact Layout & Typography from Video 00:05)   -->
+    <!-- ============================================== -->
+    <section id="celebrations" class="section celebrations-section">
+      <div class="section-heading-wrap reveal-on-scroll">
+        <span class="sub-label">DIFFERENT RITUALS, SAME JOY</span>
+        <h2 class="main-title">THE CELEBRATIONS</h2>
+        <p class="celebrations-subtitle">FOUR MOMENTS &nbsp;•&nbsp; ONE BEAUTIFUL JOURNEY</p>
+        <p class="celebrations-side-thought">
+          "Rituals that bring us closer, Moments that stay forever."
+        </p>
+        <div class="simple-divider">—— ❦ ——</div>
+      </div>
+
+      <!-- 2x2 Celebrations Collage Grid -->
+      <div class="celebrations-collage-grid">
+
+        <!-- 1. MEHNDI -->
+        <article class="collage-card reveal-on-scroll" data-event="mehndi" onclick="openRitualModal('mehndi')">
+          <div class="card-photo-box">
+            <img src="assets/images/event_mehndi.jpg" alt="Mehndi ceremony" class="card-img" loading="lazy">
+            <span class="card-tap-hint">Tap for Itinerary 🔍</span>
+          </div>
+          <div class="card-details-box">
+            <div class="card-date-stamp">
+              <span class="stamp-day">07</span>
+              <span class="stamp-month">DEC</span>
+              <span class="stamp-year">2026</span>
+            </div>
+            <h3 class="card-event-name">MEHNDI</h3>
+            <p class="card-event-time">11:00 AM</p>
+            <div class="card-dress-code">
+              <span class="icon">🍃</span>
+              <span>Dress Code: Green</span>
+            </div>
+            <p class="card-quote">"Let love leave its mark in mehndi."</p>
+            <div class="card-actions-row">
+              <button class="btn-card-details" onclick="event.stopPropagation(); openRitualModal('mehndi')">
+                <span>📖 Details</span>
+              </button>
+              <button class="btn-cal-pill" onclick="event.stopPropagation(); addToCalendar('mehndi')">
+                <span>📅 Calendar</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. MATIKOR -->
+        <article class="collage-card reveal-on-scroll" data-event="matikor" onclick="openRitualModal('matikor')">
+          <div class="card-photo-box">
+            <img src="assets/images/event_matikor.jpg" alt="Matikor sacred ritual" class="card-img" loading="lazy">
+            <span class="card-tap-hint">Tap for Itinerary 🔍</span>
+          </div>
+          <div class="card-details-box">
+            <div class="card-date-stamp">
+              <span class="stamp-day">07</span>
+              <span class="stamp-month">DEC</span>
+              <span class="stamp-year">2026</span>
+            </div>
+            <h3 class="card-event-name">MATIKOR</h3>
+            <p class="card-event-time">6:00 PM</p>
+            <div class="card-dress-code">
+              <span class="icon">🏺</span>
+              <span>Sacred Ochre Silks</span>
+            </div>
+            <p class="card-quote">"Rooted in our traditions, for a brighter tomorrow."</p>
+            <div class="card-actions-row">
+              <button class="btn-card-details" onclick="event.stopPropagation(); openRitualModal('matikor')">
+                <span>📖 Details</span>
+              </button>
+              <button class="btn-cal-pill" onclick="event.stopPropagation(); addToCalendar('matikor')">
+                <span>📅 Calendar</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. HALDI -->
+        <article class="collage-card reveal-on-scroll" data-event="haldi" onclick="openRitualModal('haldi')">
+          <div class="card-photo-box">
+            <img src="assets/images/event_haldi.jpg" alt="Haldi ceremony" class="card-img" loading="lazy">
+            <span class="card-tap-hint">Tap for Itinerary 🔍</span>
+          </div>
+          <div class="card-details-box">
+            <div class="card-date-stamp">
+              <span class="stamp-day">08</span>
+              <span class="stamp-month">DEC</span>
+              <span class="stamp-year">2026</span>
+            </div>
+            <h3 class="card-event-name">HALDI</h3>
+            <p class="card-event-time">11:00 AM</p>
+            <div class="card-dress-code">
+              <span class="icon">☀️</span>
+              <span>Dress Code: Yellow</span>
+            </div>
+            <p class="card-quote">"A little turmeric, a lot of love."</p>
+            <div class="card-actions-row">
+              <button class="btn-card-details" onclick="event.stopPropagation(); openRitualModal('haldi')">
+                <span>📖 Details</span>
+              </button>
+              <button class="btn-cal-pill" onclick="event.stopPropagation(); addToCalendar('haldi')">
+                <span>📅 Calendar</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. SANGEET -->
+        <article class="collage-card reveal-on-scroll" data-event="sangeet" onclick="openRitualModal('sangeet')">
+          <div class="card-photo-box">
+            <img src="assets/images/event_sangeet.jpg" alt="Sangeet musical night" class="card-img" loading="lazy">
+            <span class="card-tap-hint">Tap for Itinerary 🔍</span>
+          </div>
+          <div class="card-details-box">
+            <div class="card-date-stamp">
+              <span class="stamp-day">08</span>
+              <span class="stamp-month">DEC</span>
+              <span class="stamp-year">2026</span>
+            </div>
+            <h3 class="card-event-name">SANGEET</h3>
+            <p class="card-event-time">7:00 PM</p>
+            <div class="card-dress-code">
+              <span class="icon">🪩</span>
+              <span>Dress Code: Shimmy Party Wear</span>
+            </div>
+            <p class="card-quote">"Music. Moves. Memories."</p>
+            <div class="card-actions-row">
+              <button class="btn-card-details" onclick="event.stopPropagation(); openRitualModal('sangeet')">
+                <span>📖 Details</span>
+              </button>
+              <button class="btn-cal-pill" onclick="event.stopPropagation(); addToCalendar('sangeet')">
+                <span>📅 Calendar</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Torn Parchment Note at bottom of celebrations -->
+      <div class="torn-note-wrapper reveal-on-scroll">
+        <div class="torn-paper-note">
+          <p>"Some people call it ritual, we call it love."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 5: BARAT & SHUBH VIVAH (SAAT PHERE)     -->
+    <!-- (Exact layout from video 00:16 - 00:19)        -->
+    <!-- ============================================== -->
+    <section id="barat-vivah" class="section barat-vivah-section">
+      <div class="section-heading-wrap reveal-on-scroll">
+        <span class="cursive-sub">A walk to forever</span>
+        <h2 class="main-title">BARAT &amp; SHUBH VIVAH</h2>
+        <div class="simple-divider">❧ ⚜ ☙</div>
+      </div>
+
+      <!-- Barat Street Showcase -->
+      <div class="barat-card reveal-on-scroll">
+        <div class="barat-header-row">
+          <div class="lantern-badge">🏮</div>
+          <div class="shubh-barat-wood-sign">
+            <span>शुभ बारात</span>
+          </div>
+          <div class="barat-time-pill">Barat: 07:00 PM</div>
+        </div>
+
+        <div class="barat-photo-container">
+          <img src="assets/images/barat_procession.jpg" alt="Royal Barat Procession" class="barat-img" loading="lazy">
+          <div class="barat-overlay-text">
+            <span>"With dhol, drums, and dancing hearts, the groom arrives."</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Groom weds Bride / Saat Phere Card -->
+      <div class="saat-phere-card reveal-on-scroll">
+        <div class="phere-header">
+          <span class="sub-label">THE SACRED UNION</span>
+          <h2 class="phere-title">
+            <span class="p-groom">ADITYA</span>
+            <span class="p-weds">weds</span>
+            <span class="p-bride">RICHA</span>
+          </h2>
+          <p class="phere-time">Saat Phere &amp; Varmala: 09:30 PM</p>
+        </div>
+
+        <div class="mandap-photo-box">
+          <img src="assets/images/saat_phere_mandap.jpg" alt="Saat Phere by the Sacred River Ganges" class="mandap-img" loading="lazy">
+          <div class="mandap-caption">
+            <p>"Seven sacred vows bound by the eternal flame along the holy Ganges."</p>
+          </div>
+        </div>
+
+        <div class="phere-actions">
+          <button class="btn-primary-terracotta" onclick="addToCalendar('vivah')">
+            <span>📅 Add Wedding to Google Calendar</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 6: CELEBRATIONS AT MUNGER CLUB          -->
+    <!-- (Exact layout from video 00:20 - 00:21)        -->
+    <!-- ============================================== -->
+    <section id="venue" class="section venue-section">
+      <div class="munger-destination-card reveal-on-scroll">
+        
+        <div class="munger-card-header">
+          <div class="lantern-hanging-left">🏮</div>
+          <div class="munger-titles">
+            <span class="munger-pretitle">CELEBRATIONS AT</span>
+            <h2 class="munger-main-title">Munger Club</h2>
+            <p class="munger-riverside-tag">Royal Heritage by the River Ganges</p>
+          </div>
+          <div class="lantern-hanging-right">🏮</div>
+        </div>
+
+        <div class="munger-badges-row">
+          <span class="munger-pill">📍 MUNGER, BIHAR</span>
+          <span class="munger-pill">📅 26 – 28 NOV 2026</span>
+        </div>
+
+        <div class="munger-visual-box">
+          <img src="assets/images/munger_club.jpg" alt="The Historic Munger Club Venue" class="munger-cover-img" loading="lazy">
+        </div>
+
+        <div class="munger-address-block">
+          <div class="pin-icon">📍</div>
+          <div class="address-details">
+            <strong>The Munger Club (Est. 1912)</strong><br>
+            Club Road, Fort Area, Near Ganga Darshan,<br>
+            Munger, Bihar 811201, India.
+          </div>
+        </div>
+
+        <div class="munger-amenities-row">
+          <div class="amenity-item">
+            <span class="a-icon">🚗</span>
+            <span>Valet Parking</span>
+          </div>
+          <div class="amenity-item">
+            <span class="a-icon">🏨</span>
+            <span>Guest Suites</span>
+          </div>
+          <div class="amenity-item">
+            <span class="a-icon">✈️</span>
+            <span>Patna Airport</span>
+          </div>
+          <div class="amenity-item">
+            <span class="a-icon">🚆</span>
+            <span>Jamalpur Jn (8 km)</span>
+          </div>
+        </div>
+
+        <!-- The "Tap for directions" pill button from video -->
+        <div class="munger-action-wrap">
+          <a href="https://maps.google.com/?q=The+Munger+Club+Munger+Bihar" target="_blank" rel="noopener noreferrer" class="munger-directions-btn">
+            <span class="dir-icon">📍</span>
+            <span class="dir-text">Tap for directions</span>
+            <span class="dir-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 7: RSVP & SHOWER OF BLESSINGS           -->
+    <!-- ============================================== -->
+    <section id="rsvp" class="section rsvp-section">
+      <div class="section-heading-wrap reveal-on-scroll">
+        <span class="sub-label">GRACE US WITH YOUR PRESENCE</span>
+        <h2 class="main-title">RSVP &amp; Blessings</h2>
+        <div class="simple-divider">❧ ⚜ ☙</div>
+        <p class="rsvp-subtext">Kindly confirm your presence by November 10, 2026</p>
+      </div>
+
+      <div class="rsvp-parchment-box reveal-on-scroll">
+        <form id="rsvp-form" onsubmit="handleRSVPSubmit(event)">
+          <div class="form-field">
+            <label for="guest-name">Guest Name *</label>
+            <input type="text" id="guest-name" required placeholder="e.g. Dr. Rajesh &amp; Sunita Verma" class="form-control">
+          </div>
+
+          <div class="form-split">
+            <div class="form-field flex-1">
+              <label for="guest-phone">WhatsApp Number *</label>
+              <input type="tel" id="guest-phone" required placeholder="+91 98765 43210" class="form-control">
+            </div>
+            <div class="form-field flex-1">
+              <label for="guest-count">Total Guests</label>
+              <select id="guest-count" class="form-control">
+                <option value="1">1 (Attending)</option>
+                <option value="2" selected>2 (With Companion)</option>
+                <option value="3">3 Members</option>
+                <option value="4">4 Members</option>
+                <option value="5+">5+ (Family Delegation)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label>Will you be attending?</label>
+            <div class="radio-selector-wrap">
+              <label class="radio-pill active">
+                <input type="radio" name="attendance" value="Yes, joyfully attending!" checked>
+                <span>✨ Joyfully Attending</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="attendance" value="Regretfully declining from afar">
+                <span>🙏 Sending Blessings from Afar</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label>Which functions will you attend?</label>
+            <div class="checkbox-events-grid">
+              <label class="check-item"><input type="checkbox" name="events_attending" value="Mehndi" checked> <span>🌿 Mehndi (7 Dec)</span></label>
+              <label class="check-item"><input type="checkbox" name="events_attending" value="Matikor" checked> <span>🏺 Matikor (7 Dec)</span></label>
+              <label class="check-item"><input type="checkbox" name="events_attending" value="Haldi" checked> <span>☀️ Haldi (8 Dec)</span></label>
+              <label class="check-item"><input type="checkbox" name="events_attending" value="Sangeet" checked> <span>🪩 Sangeet (8 Dec)</span></label>
+              <label class="check-item"><input type="checkbox" name="events_attending" value="Shubh Vivah" checked> <span>🕊️ Vivah (9 Dec)</span></label>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="guest-message">Your Warm Wishes &amp; Blessings</label>
+            <textarea id="guest-message" rows="3" placeholder="Write a heartfelt blessing for Aditya &amp; Richa..." class="form-control"></textarea>
+          </div>
+
+          <div class="form-submit-row">
+            <button type="submit" class="btn-submit-whatsapp">
+              <span>Send RSVP via WhatsApp</span>
+              <span class="icon">💬</span>
+            </button>
+            <button type="button" class="btn-post-wish" onclick="saveWishOnly()">
+              <span>Post to Wishes Wall 💌</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Live Wishes Wall -->
+      <div class="wishes-wall-area reveal-on-scroll">
+        <h3 class="wishes-heading">Shower of Blessings</h3>
+        <p class="wishes-sub">Messages left with love by family &amp; friends</p>
+        <div id="wishes-grid" class="wishes-cards-stack">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer matching video aesthetic -->
+    <footer class="site-footer">
+      <div class="footer-kismet-mark">
+        <span class="f-monogram">K·S</span>
+      </div>
+      <p class="f-studio-title">KISMET STUDIOS</p>
+      <p class="f-tagline">Invitations for Life's Beautiful Chapters</p>
+      <div class="f-heritage-copy">
+        Crafted with Love along the Sacred Ghats of Varanasi &amp; Munger<br>
+        <strong>#AdiKiRicha</strong>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ============================================== -->
+  <!-- RITUAL DETAILS MODAL (POPUP ITINERARY & LORE)  -->
+  <!-- ============================================== -->
+  <div id="ritual-modal" class="ritual-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="ritual-modal-card">
+      <button class="modal-close-btn" onclick="closeRitualModal()" aria-label="Close ceremony details">✕</button>
+      <div id="modal-visual" class="modal-header-visual">
+        <span id="modal-badge" class="modal-badge-pill">Ritual</span>
+      </div>
+      <div class="modal-content-body">
+        <h3 id="modal-title" class="modal-title"></h3>
+        <p id="modal-subtitle" class="modal-subtitle"></p>
+        
+        <div class="modal-meta-grid">
+          <div class="modal-meta-item">
+            <span class="m-icon">📅</span>
+            <div class="m-info">
+              <label>Date</label>
+              <span id="modal-date"></span>
+            </div>
+          </div>
+          <div class="modal-meta-item">
+            <span class="m-icon">⏰</span>
+            <div class="m-info">
+              <label>Time</label>
+              <span id="modal-time"></span>
+            </div>
+          </div>
+          <div class="modal-meta-item">
+            <span class="m-icon">👗</span>
+            <div class="m-info">
+              <label>Dress Code</label>
+              <span id="modal-attire"></span>
+            </div>
+          </div>
+          <div class="modal-meta-item">
+            <span class="m-icon">📍</span>
+            <div class="m-info">
+              <label>Venue</label>
+              <span id="modal-location"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-section-block">
+          <h4 class="modal-section-heading">Spiritual Significance</h4>
+          <p id="modal-significance" class="modal-significance-text"></p>
+        </div>
+
+        <div class="modal-section-block">
+          <h4 class="modal-section-heading">Ceremony Itinerary</h4>
+          <ul id="modal-schedule" class="modal-schedule-list"></ul>
+        </div>
+
+        <div class="modal-action-row">
+          <button id="modal-cal-btn" class="modal-cal-action-btn">
+            <span>📅 Add to Google Calendar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=3000"></script>
+</body>
+</html>
